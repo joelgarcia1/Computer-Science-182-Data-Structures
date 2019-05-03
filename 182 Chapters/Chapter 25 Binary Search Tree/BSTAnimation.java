@@ -33,11 +33,28 @@ view.setStatus(key + " is already in the tree"); }
 else {
 tree.insert(key); // Insert a new key view.displayTree();
 view.setStatus(key + " is inserted in the tree");
-});
+
+
+ibtDelete.setOnAction(e -> {
 int key = Integer.parseInt(tfKey.getText());
 if (!tree.search(key)) { // key is not in the tree
     view.displayTree();
 view.setStatus(key + " is not in the tree"); } else {
 tree.delete(key); // Delete a key view.displayTree();
 view.setStatus(key + " is deleted from the tree");
- }
+}
+});
+
+Scene scene = new Scene(pane, 450, 250);
+primaryStage.setTitle("BSTAnimation"); 
+primaryStage.setScene(scene); // Place the scene in the stage
+primaryStage.show(); // Display the stage
+}
+}
+
+public void displayTree() { 
+this.getChildren().clear(); // Clear the pane if (tree.getRoot() != null) {
+// Display tree recursively
+this.getChildren().clear(); // Clear the pane
+if((tree.getRoot() != null) {
+ displayTree(tree.getRoot(),getWidth() / 2, vGap,);
